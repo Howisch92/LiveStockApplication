@@ -1,0 +1,21 @@
+<h1>Velkommen til!</h1>
+<p>Lidt om nogle af de overvejelser som er gjort i LiveStock Applikationen</p>
+<ul>
+  <li>Der er blevet brugt <strong>.Net Core</strong> og <strong>C#</strong> til serverside.</li>
+  <li>Brugen af <strong>Angular</strong> til client-side</li>
+  <li><strong>Signal R</strong> til at understøtte en tovejs kommunikation mellem clienten og serveren</li>
+</ul>
+<p>Kort forklaring om brugte teknologier:</p>
+<ul class="noDots">
+  <li>På serverside, har jeg gjort brug af .net Core og C#, til at lave passende data modeller, viewmodels, services, controllers, og hubs.</li>
+  <li>Datamodel: <strong>/Models/StockModel.cs </strong> repræsentere den entitet som jeg ville arbejde med på serverside, flytte mellem lag, berige med ny data osv. (man kan godt sige min DTO).</li>
+  <li>Hvor <strong>/Models/StockViewModel.cs</strong> er min viewmodel, som "kun" indeholde det data som skal bruges af til præsentations laget (clienten) </li>
+  <li>I <strong>/Controllers/StockController.cs</strong> er min api endpoint, som henter og "åbner" markedet, hvis forespurgt.</li>
+  <li>På servicelaget<strong>/Service/StockService.cs</strong> , har jeg det meste af mit "forretnings" logik, som er det der står for at transformere og berige minde datamodeller med det rette data, samt generer det nye "falske" data for hver aktie.</li>
+  <li>Det er også herfra jeg broadcaster aktie ændringerne, via min Signal R hub. </li>
+  <br />
+  <li>Grunden til jeg valgt at indrrage Signal R, er pga. ønsket om at features i klienten på et minimum. Og ved at broadcaste ændringer til dem som har valgt at subscribe, så kan jeg lade serveren styre, hvornår og hvad for noget data der skal broadcastes. </li>
+  <li>På Clientside har jeg valgt at tage Angular i brug, da jeg har en forkærlighed for SPA's og flowet igennem siden. Derudover er Angular også ret smart da det tilbyder data binding, så alt hvad der sker med componentens data modeller reflekteres realtime i viewet </li>
+</ul>
+<p>Beklager wall of tekst. - Glæder mig til opfølgende samtale</p>
+<p>Ha' det godt indtil da.</p>

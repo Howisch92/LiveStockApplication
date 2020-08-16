@@ -1,0 +1,20 @@
+<h1 id="tableLabel">StockMarket</h1>
+
+<p *ngIf="!stocks"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="stocks">
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Bid</th>
+      <th>Ask</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stock of stocks" >
+      <td>{{ stock.name }}</td>
+      <td>{{ stock.bidPrice }}</td>
+      <td>{{ stock.askPrice }}</td>
+    </tr>
+  </tbody>
+</table>
